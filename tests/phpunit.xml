@@ -1,0 +1,3 @@
+<phpunit bootstrap="test_helper.php"
+         colors="true">
+</phpunit>
