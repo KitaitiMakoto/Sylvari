@@ -17,6 +17,15 @@ set_include_path(implode(PATH_SEPARATOR, array(
 /** Zend_Application */
 require_once 'Zend/Application.php';
 
+/** Zend_Layout */
+require_once 'Zend/Layout.php';
+Zend_Layout::startMvc();
+
+/** Login Helper */
+require_once APPLICATION_PATH . '/controllers/helpers/Login.php';
+$loginHelper = new Sylvari_Action_Helper_Login;
+Zend_Controller_Action_HelperBroker::addHelper($loginHelper);
+
 // Create application, bootstrap, and run
 $application = new Zend_Application(
     APPLICATION_ENV,
