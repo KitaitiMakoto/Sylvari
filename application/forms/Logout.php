@@ -7,9 +7,10 @@ class Form_Logout extends Zend_Form
 
     public function init()
     {
-        $this->setMethod('post')
-             ->setAttrib('id', 'logout')
-             ->addElement('submit', 'logout', array('label' => 'Logout'));
+        $this
+            ->setMethod('post')
+            ->setAttrib('id', 'logout')
+            ->addElement('submit', 'logout', array('label' => 'Logout'));
     }
 
 
