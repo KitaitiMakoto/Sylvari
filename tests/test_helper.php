@@ -7,8 +7,8 @@ defined('APPLICATION_PATH')
 defined('APPLICATION_ENV')
     || define('APPLICATION_ENV', (getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'development'));
 
-define('APPLICATION_TEST_BOOTSTRAP_PATH', realpath(dirname(__FILE___) . '/application/bootstrap.php'));
-define('LIBRARY_TEST_BOOTSTRAP_PATH', realpath(dirname(__FILE___) . '/library/bootstrap.php'));
+define('APPLICATION_TEST_BOOTSTRAP_PATH', realpath(dirname(__FILE__) . '/application/bootstrap.php'));
+define('LIBRARY_TEST_BOOTSTRAP_PATH', realpath(dirname(__FILE__) . '/library/bootstrap.php'));
 
 set_include_path(
      APPLICATION_PATH . '/../library' . PATH_SEPARATOR .
