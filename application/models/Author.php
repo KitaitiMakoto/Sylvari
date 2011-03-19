@@ -8,8 +8,8 @@ class Model_Author
     
     public function __construct($name, $nameKana)
     {
-        $this->name     = $name;
-        $this->nameKana = $nameKana;
+        $this->name     = (string)$name;
+        $this->nameKana = (string)$nameKana;
         $this->books    = array();
     }
     
