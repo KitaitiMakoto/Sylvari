@@ -6,6 +6,14 @@ class IndexControllerTest extends Zend_Test_PHPUnit_ControllerTestCase
 {
     public $bootstrap = APPLICATION_TEST_BOOTSTRAP_PATH;
     
+    public function testMustHaveLinkToSerialPageOfCurrentUser()
+    {
+        $this->login();
+        $this->dispatch('/');
+                
+        $this->assertQuery('a[href="serials/admin"]');
+    }
+    
     // Tests for Login action helper
     public function testLoginFormRenderedWhenNotLoggedIn()
     {
@@ -35,7 +43,7 @@ class IndexControllerTest extends Zend_Test_PHPUnit_ControllerTestCase
         return $this;
     }
     
-    private function login($userid = 'admin', $password = 'horseload')
+    private function login($userid = 'admin', $password = 'horselord')
     {
         $this->addLoginHelper();
         $this->request
