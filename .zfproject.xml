@@ -20,6 +20,9 @@
       <layoutsDirectory enabled="false"/>
       <modelsDirectory>
         <modelFile modelName="Filter"/>
+        <modelFile modelName="Serial"/>
+        <modelFile modelName="Book"/>
+        <modelFile modelName="Author"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <viewsDirectory>
