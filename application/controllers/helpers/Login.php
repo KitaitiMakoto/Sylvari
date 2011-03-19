@@ -23,7 +23,7 @@ class Sylvari_Action_Helper_Login extends Zend_Controller_Action_Helper_Abstract
                 $controller->view->account = new Form_Login;
                 return;
             } else {
-                $controller->view->account = new Form_Logout;
+                $controller->view->account = new Form_Logout(array('userName' => $auth->getIdentity()));
             }
         } else {
             if (!$request->getPost('userid')) {
@@ -38,8 +38,7 @@ class Sylvari_Action_Helper_Login extends Zend_Controller_Action_Helper_Abstract
                 ->setCredential($request->getPost('password'));
             $result = $auth->authenticate($adapter);
             if ($result->isValid()) {
-                //$auth->getStorage()->write($adapter->getResultRowObject(NULL, 'password'));
-                $controller->view->account = new Form_Logout;
+                $controller->view->account = new Form_Logout(array('userName' => $auth->getIdentity()));
             } else {
                 foreach ($result->getMessages() as $message) {
                     print($message . "<br>\n");
@@ -47,5 +46,6 @@ class Sylvari_Action_Helper_Login extends Zend_Controller_Action_Helper_Abstract
                 $controller->view->account = new Form_Login;
             }
         }
+
     }
 }
