@@ -1,4 +1,4 @@
-<?
+<?php
 
 require_once dirname(__FILE__) . '/../../test_helper.php';
 require_once APPLICATION_PATH . '/models/Book.php';
